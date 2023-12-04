@@ -8,7 +8,5 @@ class Cliente (models.Model):
     status = models.BooleanField(default=True)
     
 
-def __str__(self):
-    return self.nombre
 
 # Create your models here.

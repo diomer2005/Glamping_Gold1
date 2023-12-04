@@ -25,12 +25,12 @@
                     </tr>
                 </thead>                
                 <tbody>
-                    {% for reserva in reservas_list %}
+                    {% for reservas in reserva_list %}
                     <tr>
-                    <td>{{ reserva.fecha }}</td>
-                    <td>{{ reserva.total }}</td>
-                    <td>{{ reserva.fechaInicio }}</td>
-                    <td>{{ reserva.fechaFin }}</td>
+                    <td>{{ reservas.fecha }}</td>
+                    <td>{{ reservas.total }}</td>
+                    <td>{{ reservas.fechaInicio }}</td>
+                    <td>{{ reservas.fechaFin }}</td>
                     <!-- Toggle Switch button -->
                     <td>
                         <form action="{% url 'reserva_status' reserva.id %}" method="POST">
