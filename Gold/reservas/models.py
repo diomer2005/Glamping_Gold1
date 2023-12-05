@@ -8,9 +8,7 @@ class Reserva(models.Model):
     fechaInicio = models.DateField()
     fechaFin = models.DateField()
     status = models.BooleanField(default=True)
-    idCliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    idCabaña = models.ForeignKey(Cabaña, on_delete=models.CASCADE)
-   
+
     
 
 # Create your models here.
