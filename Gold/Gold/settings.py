@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'pagos',
     'cabañas',
     'tipocomodidades',
-    'reservasservicio'
+    'reservasservicio',
+    'tipocabañas'
     
     
     

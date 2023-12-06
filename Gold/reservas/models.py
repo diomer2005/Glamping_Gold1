@@ -8,7 +8,10 @@ class Reserva(models.Model):
     fechaInicio = models.DateField()
     fechaFin = models.DateField()
     status = models.BooleanField(default=True)
+    cliente = models.ForeignKey('clientes.Cliente', on_delete=models.DO_NOTHING)
 
-    
+    def __str__(self):
+        return self.fecha
+
 
 # Create your models here.

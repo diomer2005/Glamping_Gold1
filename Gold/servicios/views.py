@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from servicios.models import Servicio
 
 def servicios(request):
-    servicios_list = Servicio.objects.all()    
+    servicios_list = Servicio.objects.all()       
     return render(request, 'servicios/index.html', {'servicios_list': servicios_list}
 
 )
