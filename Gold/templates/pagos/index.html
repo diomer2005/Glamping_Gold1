@@ -25,11 +25,11 @@
                 <tbody>
                     {% for pago in pagos_list %}
                     <tr>
-                    <td>{{ pago.fecha }}</td>
-                    <td>{{ pago.valor }}</td>                    
+                    <td>{{ pagos.fecha }}</td>
+                    <td>{{ pagos.valor }}</td>                    
                     <!-- Toggle Switch button -->
                     <td>
-                        <form action="{% url 'pago_status' pago.id %}" method="POST">
+                        <form action="" method="POST">
                             {% csrf_token %}                            
                             <div class="custom-control custom-switch">
                                 <input type="checkbox" class="custom-control-input" id="customSwitch{{ forloop.counter }}" {% if pago.status %} checked {% endif %} onchange="this.form.submit()">
