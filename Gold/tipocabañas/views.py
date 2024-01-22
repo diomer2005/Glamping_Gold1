@@ -12,5 +12,13 @@ def change_status_tipocabaña(request, tipocabaña_id):
     tipocabaña.save()
     return redirect('tipocabañas')
 
+from .forms import TipocabañaForm
+
+def create_tipocabaña(request):
+    form = TipocabañaForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('tipocabañas')    
+    return render(request, 'tipocabañas/create.html', {'form': form})
 
 # Create your views here.

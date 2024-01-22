@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from comodidades.models import Comodidad
+from .forms import ComodidadForm
 
 def comodidades(request):
     comodidades_list = Comodidad.objects.all()  
@@ -12,5 +13,11 @@ def change_status_comodidad(request, comodidades_id):
     return redirect('comodidades')
 
 
+def create_comodidad(request):
+    form = ComodidadForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('comodidades')    
+    return render(request, 'comodidades/create.html', {'form': form})
 
 # Create your views here.

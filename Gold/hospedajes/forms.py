@@ -1,7 +1,11 @@
 from django import forms
 from . models import Hospedaje
+from clientes. models import Cliente
+from cabañas. models import Cabaña
 
 class HospedajeForm(forms.ModelForm):
+    Cliente = forms.ModelChoiceField(queryset=Cliente.objects.filter(status = True).order_by('nombre'))
+    Cabaña = forms.ModelChoiceField(queryset=Cabaña.objects.filter(status = True).order_by('nombre'))
     class Meta:
         model = Hospedaje
         fields = "__all__"
@@ -15,9 +19,10 @@ class HospedajeForm(forms.ModelForm):
             'Cliente': 'Cliente'                    
         }
         widgets = {
-            'fecha': forms.DateInput(attrs={'placeholder': 'Ingresa la fecha del dia que se creó el hospedaje'}),
+            'fecha': forms.DateInput(attrs={'type': 'date'}),
             'total': forms.TextInput(attrs={'placeholder': 'Ingrese el total'}),
-            'fechaInicio': forms.DateInput(attrs={'placeholder': 'Ingresa la fecha que deseas iniciar tú hospedaje'}), 
-            'fechaFin': forms.DateInput(attrs={'placeholder': 'Ingresa la fecha que deseas terminar tú hospedaje'}),
-            ''           
+            'fechaInicio': forms.DateInput(attrs={'type': 'date'}), 
+            'fechaFin': forms.DateInput(attrs={'type': 'date'}),
+            'Cabaña': forms.SelectMultiple(attrs={'placeholder': 'Seleccione una cabaña'}),         
+            'Cliente': forms.SelectMultiple(attrs={'placeholder': 'Seleccione un cliente'}),
         }

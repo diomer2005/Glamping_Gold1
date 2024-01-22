@@ -12,4 +12,13 @@ def change_status_cabaña(request, cabaña_id):
     cabaña.save()
     return redirect('cabañas')
 
+from .forms import CabañaForm
+
+def create_cabaña(request):
+    form = CabañaForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        form.save()
+        return redirect('cabañas')    
+    return render(request, 'cabañas/create.html', {'form': form})
+
 # Create your views here.

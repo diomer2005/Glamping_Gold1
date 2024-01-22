@@ -5,6 +5,7 @@ from tipocabañas.models import Tipocabaña
 
 
 class Cabaña(models.Model):
+    imagen = models.ImageField(upload_to='static/imagenC', null=True)
     nombre = models.CharField(max_length=25)
     capacidad = models.IntegerField()
     descripcion = models.CharField(max_length=25)
