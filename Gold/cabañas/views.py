@@ -15,7 +15,7 @@ def change_status_cabaña(request, cabaña_id):
 from .forms import CabañaForm
 
 def create_cabaña(request):
-    form = CabañaForm(request.POST or None, request.FILES or None)
+    form = CabañaForm(request.POST or None , request.FILES or None)
     if form.is_valid():
         form.save()
         return redirect('cabañas')    
