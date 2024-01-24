@@ -13,7 +13,7 @@ def change_status_clientes(request, clientes_id):
     return redirect('clientes')
 
 def create_cliente(request):
-    form = ClienteForm(request.POST or None)
+    form = ClienteForm(request.POST or None )
     if form.is_valid():
         form.save()
         return redirect('clientes')    
