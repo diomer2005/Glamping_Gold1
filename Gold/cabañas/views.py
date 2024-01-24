@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
-
 from cabañas.models import Cabaña
+from .forms import CabañaForm
 
 def cabañas(request):    
     cabañas_list = Cabaña.objects.all()    
     return render(request, 'cabañas/index.html', {'cabañas_list': cabañas_list})
+
 
 def change_status_cabaña(request, cabaña_id):
     cabaña = Cabaña.objects.get(pk=cabaña_id)

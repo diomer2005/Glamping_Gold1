@@ -15,7 +15,7 @@ class CabañaForm(forms.ModelForm):
             'tipocabaña': 'Tipocabaña',                      
         }
         widgets = {
-            # 'imagen': forms.FileInput(attrs={'placeholder': 'Ingrese imagen'}),
+            'imagen': forms.FileInput(attrs={'placeholder': 'Ingrese imagen'}),
             'nombre': forms.TextInput(attrs={'placeholder': 'Ingresa el nombre'}),
             'capacidad': forms.NumberInput(attrs={'placeholder': 'Ingrese capacidad'}),
             'descripcion': forms.TextInput(attrs={'placeholder': 'Ingrese descripcion'}),

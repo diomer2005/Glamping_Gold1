@@ -23,6 +23,6 @@ class HospedajeForm(forms.ModelForm):
             'total': forms.TextInput(attrs={'placeholder': 'Ingrese el total'}),
             'fechaInicio': forms.DateInput(attrs={'type': 'date'}), 
             'fechaFin': forms.DateInput(attrs={'type': 'date'}),
-            'Cabaña': forms.SelectMultiple(attrs={'placeholder': 'Seleccione una cabaña'}),         
-            'Cliente': forms.SelectMultiple(attrs={'placeholder': 'Seleccione un cliente'}),
+            'cabaña': forms.SelectMultiple(attrs={'placeholder': 'Seleccione una cabaña'}),         
+            'cliente': forms.SelectMultiple(attrs={'placeholder': 'Seleccione un cliente'}),
         }
